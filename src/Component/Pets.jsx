@@ -1,8 +1,11 @@
-import React, { use } from 'react';
+import React, { use, useEffect } from 'react';
 import Pet from './Pet';
 
-const Pets = ({fetchPets}) => {
-    const pets = use(fetchPets)
+const Pets = ({fetchPets, pets, setPets}) => {
+    const initialPets = use(fetchPets)
+    useEffect(() => {
+        setPets(initialPets)
+    }, [initialPets, setPets])
     console.log(pets);
     return (
         <div>

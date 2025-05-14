@@ -1,6 +1,6 @@
 import React from "react";
 
-const PostPets = () => {
+const PostPets = ({pets, setPets}) => {
   const handlePetOrder = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -16,8 +16,11 @@ const PostPets = () => {
     })
       .then((res) => res.json())
       .then((data) => {
+        if(data.insertedId) {
         console.log("response from update data", data);
+        setPets([...pets,newPet])
         form.reset();
+        }       
       });
   };
 

@@ -4,6 +4,7 @@ import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router'
 import MainLayout from './MainLayout/MainLayout.jsx'
 import Home from './Component/Home.jsx'
+import PetDetails from './Component/PetDetails.jsx'
 
 const router = createBrowserRouter([
   {
@@ -14,6 +15,11 @@ const router = createBrowserRouter([
         index: true,
         Component: Home,
       },
+      {
+        path:"/petDetails/:id",
+        loader: ({params}) => fetch(`http://localhost:2000/pets/${params.id}`),
+        Component: PetDetails,
+      }
     ]
   }
 ])
