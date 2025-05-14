@@ -7,7 +7,7 @@ const fetchPets = fetch("http://localhost:2000/pets").then(res => res.json())
 const Home = () => {
     const [pets, setPets] = useState([])
     return (
-        <div>
+        <div className='p-6'>
             Home
             <PostPets pets={pets} setPets={setPets}></PostPets>
             <div className='my-10'>
