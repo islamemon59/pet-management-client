@@ -9,7 +9,9 @@ const Home = () => {
         <div>
             Home
             <PostPets></PostPets>
-            <Pets fetchPets={fetchPets}></Pets>
+            <div className='my-10'>
+                <Pets fetchPets={fetchPets}></Pets>
+            </div>
         </div>
     );
 };
